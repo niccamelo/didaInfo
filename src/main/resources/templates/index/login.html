@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DidaInfo</title>
+
+	<!-- CSS Bootstrap CDN v-5.2 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!--LINK CDN REMIX ICON-->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+	<!-- meu CSS -->
+	<link rel="stylesheet" href="../../CSS/login.css">
+	<link rel="stylesheet" th:href="@{/CSS/styleGlobal.css}">
+
+
+</head>
+
+<body>
+	<main>
+		<!-- Inicio Menu Nav -->
+
+
+		<header class="container">
+			<button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav fw-bolder">
+					<li class="nav-item">
+						<a class="nav-link text-light" aria-current="page" href="alunos/cadastrar">
+							<i class="ri-login-box-line border p-2 rounded-circle"></i>
+							Cadastrar-se
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-light" th:href="@{/index}">
+							<i class="ri-home-wifi-line border rounded-circle p-2"></i>
+							Início
+						</a>
+					</li>
+			</div>
+			</div>
+			</nav>
+
+		</header>
+		<!-- Fim Menu Nav -->
+
+		<!--Container do formulário de login-->
+		<div class="wrapper">
+			<img class="img-login" style=" width: 160px;" src="../../img/logopreta.png" alt="">
+
+			<div th:if="${param.error != null}" class="alert alert-danger">
+				<span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
+			</div>
+
+			<form class="pt-3" method="POST" th:action="@{/login}">
+				
+				<div class="form-group py-2">
+					<div class="input-field"> <span class="far fa-user p-2"></span> 
+					<input type="email"	placeholder="E-mail" name="username" class=""> 
+					</div>
+				</div>
+				
+				<div class="form-group py-1 pb-2">
+					<div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password"
+							placeholder="Senha" class="" name="password">
+						<button class="btn text-muted"> <span class="far fa-eye-slash">
+							</span> </button>
+					</div>
+				</div>
+
+				<div class="d-flex align-items-start">
+					<div class="remember">
+						<label class="option"><b>Lembrar-se de mim</b>
+							<input type="radio" name="radio"> <span class="checkmark"></span> </label>
+					</div>
+
+					<div class="ml-auto">
+						<a href="#" id="forgot">Esqueceu sua senha?</a>
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-block text-center my-3">Entrar</button>
+
+				<div class="text-center pt-3 text-muted"><B>Não possui cadastro?</B> 
+				<a type="button" th:href="@{cliente/cadastrar}">Cadastrar</a></div>
+			</form>
+		</div>
+
+	</main>
+
+
+
+</body>
+
+</html>

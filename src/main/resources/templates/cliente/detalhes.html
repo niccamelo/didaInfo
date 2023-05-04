@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS Bootstrap CDN v-5.2 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!--LINK CDN REMIX ICON-->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<!-- Meu CSS -->
+	<link rel="stylesheet" href="../../Css/cliente/detalhes.css">
+	<link rel="stylesheet" th:href="@{/CSS/styleGlobal.css}">
+</head>
+
+<body>
+	<nav th:replace="~{fragments/_navbar :: nav}"></nav>
+	<main>
+		<div class="container">
+
+			<!-- card Principal-->
+			<div class="card-main">
+
+				<!-- card cliente-->
+				<div class="card-client">
+
+					<!-- card cliente-->
+					<h1 class="card-header text-center mb-2">Dados Pessoais</h1>
+					<!-- /.card-header -->
+					<h3 class="profile-username text-center" th:text="${cliente.nome}">Nina Mcintire
+					</h3>
+					<strong><i class="fas fa-book mr-1"></i> CPF</strong>
+					<p class="text-muted" th:text="${cliente.cpf}">
+						484.325.821-07
+					</p>
+
+					<hr>
+
+					<strong><i class="fas fa-mobile mr-1"></i> Telefone</strong>
+					<p class="text-muted" th:text="${cliente.telefone}">(82) 98881-5053</p>
+
+					<hr>
+
+					<strong><i class="fas fa-envelope mr-1"></i> E-mail</strong>
+					<p class="text-muted" id="email" th:text="${cliente.email}">nina@mail.com</p>
+
+					<hr>
+
+					<strong><i class="fas fa-calendar-alt mr-1"></i> Data de Nascimento</strong>
+					<p class="text-muted" th:text="${#temporals.format(cliente.dataNascimento)}">
+						30 de maio de 1981
+					</p>
+
+					<hr>
+
+					<strong><i class="fas fa-map-marker-alt mr-1"></i> Endereço</strong>
+					<p class="text-muted" th:text="${cliente.endereco}">Malibu, California</p>
+				</div>
+
+				<!-- /.card-Cliente -->
+
+
+				<!-- carde serviços -->
+				<div class="card-service">
+
+						<h1 class="card-header text-center mb-2">Serviços</h1>
+					
+
+					<div class=" cards " th:each="servicos : ${cliente.servicos}">
+						<div class="row ">
+							<div class="col-8">
+								<strong class="timeline-header" th:text="${servicos.marca}"></strong>
+								<p class="timeline-body " th:text="${servicos.descricao}"></p>
+							</div>
+							<div class="col-3">
+								<div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+									<a type="button" class="btn btn-outline-secondary"
+										th:href="@{/servicos/{id} (id=${servicos.id})}">Detalhes</a>
+								</div>
+							</div>
+						</div>
+						<hr>
+					</div>
+
+
+				</div>
+			</div>
+			<!-- /.card-body -->
+		</div>
+		<!-- /.container-->
+
+	</main>
+
+	<th:block th:fragment="scripts">
+		<script th:src="@{/js/avatar.min.js}"></script>
+		<script>
+			const servico = document.getElementById("servico").innerText;
+
+
+		</script>
+	</th:block>
+</body>
+
+</html>

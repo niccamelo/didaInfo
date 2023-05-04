@@ -1,0 +1,38 @@
+*{
+  
+     background: black;
+     color:bisque;
+    
+}
+
+.text-center{
+    background: rgb(18, 16, 18);
+}
+
+.list-group{
+    border-radius: 10px;
+    float:inline-start;
+       background: black;
+        border: 1px solid rgb(65, 56, 63);
+        margin-top:20px;
+         display:flex;
+}
+
+.list-group-item{
+	       background: black;
+}
+
+.card{
+	
+    border-radius: 10px;
+    display:flex;
+    background: rgb(18, 16, 18);
+    margin: auto;
+    margin-top:20px;
+           
+}
+.btn-group{   
+	width:50px;
+    float:right;
+position:absolute;
+}

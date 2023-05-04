@@ -1,0 +1,33 @@
+.main{
+	display:flex;
+	 flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+	display:flex;
+	 flex-direction: column;
+	align-items: center;
+}
+
+.card-main{
+	display:flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 1rem;
+	padding: 1rem ;
+	color: #fff;
+	border-radius: 1rem;
+	background: transparent ;
+    border: 1px solid #565659 ;
+}
+
+
+.card-header{
+    font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+
+

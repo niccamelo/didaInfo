@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS Bootstrap CDN v-5.2 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!--LINK ICON-->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<!-- Meu CSS -->
+	<link rel="stylesheet" href="../../Css/adms/detalhes.css">
+	<link rel="stylesheet" th:href="@{/CSS/styleGlobal.css}">
+</head>
+
+<body>
+	<main>
+		<nav th:replace="~{fragments/_navbar :: nav}"></nav>
+		<main>
+			<div class="container">
+
+				<!-- card Principal-->
+				<div class="card-main">
+
+						<!-- card header-->
+						<h1 class="card-header text-center mb-2">Dados Pessoais</h1>
+						<!-- /.card-header -->
+
+						<strong> Nome</strong>
+						<h4 class="text-muted" th:text="${adms.nome}">Alice Maria</h4>
+
+						<strong> E-mail</strong>
+						<p class="text-muted" th:text="${adms.email}">123@aaa.aaaa</p>
+
+						<strong> Data de Nascimento</strong>
+						<i class="far fa-clock"></i>
+						<p class="text-muted" th:text="${#temporals.format(adms.dataNascimento)}"></p>
+
+						<strong> CPF</strong>
+						<p class="text-muted" th:text="${adms.cpf}">1234567891-0</p>
+
+						<strong> Telefone</strong>
+						<p class="text-muted" th:text="${adms.telefone}">(00) 00000-0000</p>
+
+						<strong><i class="fas fa-map-marker-alt mr-1"></i> Endereço</strong>
+						<p class="text-muted" th:text="${adms.endereco}">Malibu, California</p>
+
+						
+				</div>
+
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+					crossorigin="anonymous"></script>
+			</div>
+		</main>
+
+
+</body>
+
+</html>

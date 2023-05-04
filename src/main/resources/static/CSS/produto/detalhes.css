@@ -1,0 +1,121 @@
+.main{
+	display:flex;
+	 flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.cardServico{
+	color:#fff;
+    font-weight: 700;
+}
+.cardPrincipal{
+	display:flex;
+	 flex-direction: column;
+	align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+ .card{
+	width: 300px;
+	margin: 1rem;
+	color: #fff;
+	border-radius: 1rem;
+	background: transparent ;
+    border: 1px solid #565659 ;
+}
+.card .card-header{
+	background: transparent;
+	color: #565659;
+}
+
+.card .card-body{
+	background: transparent;
+}
+
+.cardEntrada p{
+	color: green;
+}
+
+.cardSaida p{
+	color: red;
+}
+.card .card-orcamento{
+	display:flex;
+		 flex-direction: row;
+	align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+	margin: 1rem;
+	color: #fff;
+	border-radius: 1rem;
+	background: transparent ;
+}
+
+@media only screen and (min-width: 600px) {
+	.cardPrincipal{
+		display:flex;
+		 flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	}
+	#one{
+		width: 55%;
+		height: 100px;
+	}
+	#two{
+		width: 36%;
+		height: 100px;
+	}
+	#tree{
+		width: 100%;
+		height: 100px;
+	}
+	#for{
+		width: 45%;
+		height: 100px;
+	}
+	#five{
+		width: 45%;
+		height: 100px;
+	}
+	#six{
+		width: 50%;
+		height: 150px;
+	}
+}
+
+@media only screen and (min-width: 991px) {
+	.cardPrincipal{
+		display:flex;
+		 flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	}
+	#one{
+		width: 58%;
+		height: 100px;
+	}
+	#two{
+		width: 35%;
+		height: 100px;
+	}
+	#tree{
+		width: 100%;
+		height: 100px;
+	}
+	#for{
+		width: 27%;
+		height: 100px;
+	}
+	#five{
+		width: 27%;
+		height: 100px;
+	}
+	#six{
+		width: 35%;
+		height: 150px;
+	}
+}
